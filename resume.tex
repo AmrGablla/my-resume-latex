@@ -7,6 +7,14 @@
 % Character encoding
 \usepackage[utf8]{inputenc}
 \usepackage[scale=0.75]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+% Improve readability with better spacing
+\setlength{\hintscolumnwidth}{3.5cm}
+\setlength{\separatorcolumnwidth}{0.5cm}
+\setlength{\maincolumnwidth}{\dimexpr\paperwidth-\hintscolumnwidth-\separatorcolumnwidth\relax}
 
 % Personal data
 \input{content/personal_info.tex}
@@ -18,9 +26,6 @@
 
 % Summary
 \input{content/summary.tex}
-
-% Medical Imaging Highlights
-\input{content/medical_imaging_highlights.tex}
 
 % Open-Source Contributions
 \input{content/open_source.tex}
