@@ -1,0 +1,33 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Modern CV theme and color
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+
+% Character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.75]{geometry}
+
+% Personal data
+\input{content/personal_info.tex}
+
+\begin{document}
+
+% Make title
+\makecvtitle
+
+% Summary
+\section{Summary}
+As a Senior Software Engineer, I leverage over seven years of expertise in software engineering to design, develop, and maintain cutting-edge solutions that drive efficiency and innovation. My technical proficiency spans Java, Node.js, Vue, and other modern web technologies.
+
+Previously at Rology, I played a pivotal role in advancing healthcare technology. I led the development of a specialized reporting tool that streamlined workflow for medical professionals and contributed to an advanced Medical Viewer for medical image visualization. My collaboration with cross-functional teams ensured FDA clearance for platform components, upholding compliance and safety standards.
+
+% Sections
+\input{content/experience.tex}
+\input{content/education.tex}
+\input{content/skills.tex}
+% \input{content/projects.tex}  % Uncomment if you want to include projects
+\input{content/certifications.tex}
+
+\end{document}
+
