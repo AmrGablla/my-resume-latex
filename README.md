@@ -1,10 +1,10 @@
-# LaTeX Resume Project
+# My Resume Builder
 
-A modular LaTeX-based resume system for easy editing and PDF generation.
+My personal LaTeX-based resume builder. Modular setup for easy updates.
 
 ## Project Structure
 
-```
+```text
 my-resume/
 ├── resume.tex              # Main LaTeX document
 ├── content/                 # Modular content files
@@ -18,37 +18,36 @@ my-resume/
 └── output/                 # Generated PDF (created on build)
 ```
 
-## Prerequisites
-
-Install LaTeX distribution:
+## Setup
 
 ### macOS
 
 **Option 1: BasicTeX (Recommended - Smaller, ~100MB)**
+
 ```bash
 brew install --cask basictex
-# Add to PATH (add to ~/.zshrc or ~/.bash_profile):
+# Add to PATH (add to ~/.zshrc):
 export PATH="/Library/TeX/texbin:$PATH"
 ```
 
-After installation, you may need to install the ModernCV package:
+After installation, install the ModernCV package:
+
 ```bash
 sudo tlmgr update --self
 sudo tlmgr install moderncv
 ```
 
 **Option 2: MacTeX (Full installation, ~4GB)**
+
 ```bash
 brew install --cask mactex
 ```
 
 ### Linux
+
 ```bash
 sudo apt-get install texlive-full  # Ubuntu/Debian
 ```
-
-### Windows
-Install [MiKTeX](https://miktex.org/) or [TeX Live](https://www.tug.org/texlive/)
 
 ## Usage
 
@@ -75,18 +74,17 @@ make view
 make clean
 ```
 
-## Editing Your Resume
+## Editing My Resume
 
 1. **Personal Information**: Edit `content/personal_info.tex`
    - Update name, contact info, social links
-   - Remove optional fields (like photo) if not needed
 
 2. **Experience**: Edit `content/experience.tex`
    - Add/remove `\cventry` blocks for each position
    - Format: `\cventry{Date}{Title}{Company}{Location}{}{Description}`
 
 3. **Education**: Edit `content/education.tex`
-   - Add your degrees and educational achievements
+   - Add degrees and educational achievements
 
 4. **Skills**: Edit `content/skills.tex`
    - Use `\cvdoubleitem` for two-column skill listings
@@ -102,6 +100,7 @@ make clean
 ### Change Theme/Color
 
 Edit `resume.tex`:
+
 - **Style**: Change `\moderncvstyle{classic}` to `casual`, `banking`, `oldstyle`, or `fancy`
 - **Color**: Change `\moderncvcolor{blue}` to `orange`, `green`, `red`, `purple`, `grey`, or `black`
 
@@ -110,15 +109,8 @@ Edit `resume.tex`:
 - Comment out unwanted sections in `resume.tex` using `%`
 - Create new section files in `content/` and include them with `\input{content/filename.tex}`
 
-## ModernCV Documentation
-
-This project uses the [ModernCV](https://github.com/xdanaux/moderncv) class. For more customization options, see:
-- [ModernCV Documentation](https://github.com/xdanaux/moderncv)
-- [LaTeX Documentation](https://www.latex-project.org/help/documentation/)
-
-## Tips
+## Notes
 
 - Run `pdflatex` twice to ensure all references and citations are resolved
 - Use `make clean` before committing to avoid including auxiliary files
-- Keep your original PDF (`Profile-2.pdf`) as a reference while migrating content
-
+- Uses [ModernCV](https://github.com/xdanaux/moderncv) class
