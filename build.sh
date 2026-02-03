@@ -4,6 +4,7 @@
 # Alternative to Makefile - run with: ./build.sh
 
 MAIN="resume"
+RESUME_PDF="Amr_GabAllah_Resume"
 OUTPUT_DIR="output"
 
 # Add LaTeX to PATH if not already there (for MacTeX)
@@ -33,20 +34,20 @@ mkdir -p "$OUTPUT_DIR"
 
 # Compile LaTeX (run twice for references)
 echo "Compiling resume..."
-pdflatex -output-directory="$OUTPUT_DIR" "$MAIN.tex" > /dev/null 2>&1
-pdflatex -output-directory="$OUTPUT_DIR" "$MAIN.tex"
+pdflatex -jobname="$RESUME_PDF" -output-directory="$OUTPUT_DIR" "$MAIN.tex" > /dev/null 2>&1
+pdflatex -jobname="$RESUME_PDF" -output-directory="$OUTPUT_DIR" "$MAIN.tex"
 
 # Check if compilation was successful
-if [ -f "$OUTPUT_DIR/$MAIN.pdf" ]; then
-    echo "✓ Resume compiled successfully: $OUTPUT_DIR/$MAIN.pdf"
+if [ -f "$OUTPUT_DIR/$RESUME_PDF.pdf" ]; then
+    echo "✓ Resume compiled successfully: $OUTPUT_DIR/$RESUME_PDF.pdf"
     
     # Open PDF if on macOS
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        open "$OUTPUT_DIR/$MAIN.pdf"
+        open "$OUTPUT_DIR/$RESUME_PDF.pdf"
     fi
 else
     echo "✗ Compilation failed. Check the log files in $OUTPUT_DIR/"
-    echo "  Run with verbose output: pdflatex -output-directory=$OUTPUT_DIR $MAIN.tex"
+    echo "  Run with verbose output: pdflatex -jobname=$RESUME_PDF -output-directory=$OUTPUT_DIR $MAIN.tex"
     exit 1
 fi
 
